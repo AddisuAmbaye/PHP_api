@@ -39,7 +39,7 @@ final class UserTest extends TestCase
 
     public function testUnserialize(): void
     {
-        $expectUserData = [
+        $userData = [
             'id' => 5,
             'user_uuid' => Uuid::uuid4()->toString(),
             'first_name' => 'Pierre',
@@ -50,16 +50,16 @@ final class UserTest extends TestCase
             'created_date' => '2023-07-01 19:59:55'
         ];
 
-        $this->userEntity->unserialize($expectUserData);
+        $this->userEntity->unserialize($userData);
 
-        // assertions
-        $this->assertSame($expectUserData['id'], $this->userEntity->getSequentialId());
-        $this->assertSame($expectUserData['user_uuid'], $this->userEntity->getUserUuid());
-        $this->assertSame($expectUserData['first_name'], $this->userEntity->getFirstName());
-        $this->assertSame($expectUserData['last_name'], $this->userEntity->getLastName());
-        $this->assertSame($expectUserData['email'], $this->userEntity->getEmail());
-        $this->assertSame($expectUserData['phone'], $this->userEntity->getPhone());
-        $this->assertSame($expectUserData['password'], $this->userEntity->getPassword());
-        $this->assertSame($expectUserData['created_date'], $this->userEntity->getCreationDate());
+        // Assertions
+        $this->assertSame($userData['id'], $this->userEntity->getSequentialId());
+        $this->assertSame($userData['user_uuid'], $this->userEntity->getUserUuid());
+        $this->assertSame($userData['first_name'], $this->userEntity->getFirstName());
+        $this->assertSame($userData['last_name'], $this->userEntity->getLastName());
+        $this->assertSame($userData['email'], $this->userEntity->getEmail());
+        $this->assertSame($userData['phone'], $this->userEntity->getPhone());
+        $this->assertSame($userData['password'], $this->userEntity->getPassword());
+        $this->assertSame($userData['created_date'], $this->userEntity->getCreationDate());
     }
 }
