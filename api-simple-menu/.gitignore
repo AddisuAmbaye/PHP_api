@@ -1,0 +1,16 @@
+# Environment file
+.env
+
+# Depedency files
+/vendor
+composer.lock
+
+# Tests
+phpunit.xml
+.phpunit.cache
+
+# IDE config folder
+/.idea
+
+# OS files
+.DS_Store
